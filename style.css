@@ -1,0 +1,292 @@
+/* Root variables */
+:root {
+    --dark-bg: #0a0a0a;
+    --dark-secondary: #151515;
+    --card-bg: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #909090;
+    --accent: #00a8ff;
+}
+
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: outfit;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+  /* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-primary);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--accent);
+  }
+  
+  .login-btn {
+    padding: 0.6rem 2rem;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--text-primary);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    background: var(--accent);
+}
+
+                                                        /* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensures full-screen hero section */
+    overflow: hidden;
+}
+.hero-overlay h1 {
+    font-size: 2rem; 
+    font-weight: bold;
+    filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.5));
+}
+
+.hero-overlay p {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire section */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Ensure contrast against the video */
+    width: 80%;
+}
+                               /* Projects Section */
+.projects {
+    max-width: 1400px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .project-card {
+    background: var(--dark-secondary);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 300px;
+    background: var(--card-bg);
+    position: relative;
+  }
+  
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .project-info {
+    padding: 1.5rem;
+    background: var(--card-bg);
+  }
+  
+  .project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+  
+  .project-info p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+  
+                        /* Contact Section */
+  .contact {
+    text-align: center;
+    padding: 8rem 2rem;
+    background: linear-gradient(to bottom, transparent, var(--dark-secondary));
+  }
+  
+  .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .projects-grid {
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links a:not(.login-btn) {
+      display: none;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .project-image {
+      height: 250px;
+    }
+    
+    .projects h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-image {
+      height: 200px;
+    }
+    
+    .projects {
+      padding: 0 1rem;
+    }
+    
+    .contact {
+      padding: 4rem 1rem;
+    }
+  }
+
+                                /*footer styles*/
+footer {
+background-color: #111; /* Dark background, adjust as needed */
+color: #eee; /* Light text color */
+padding: 20px; /* Add some padding around the content */
+text-align: center; /* Center the text */
+font-family: sans-serif; /* Use a clean font */
+}
+
+.footer-content{
+    max-width: 960px;
+    margin: 0 auto;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust spacing between logo and text */
+}
+
+.akiy-studio{
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  width: 40px; 
+  height: auto; 
+}
+.akiy-studio{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 6%;
+    margin-bottom: 20px;
+    
+}
+
+.social-icons a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
